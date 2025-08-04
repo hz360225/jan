@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ur">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>تصاویر اور ویڈیوز گیلری</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background-color: #f0f0f0;
+      padding: 20px;
+      text-align: center;
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+    .gallery img, .gallery video {
+      width: 100%;
+      height: auto;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border-radius: 12px;
+      cursor: pointer;
+    }
+    .gallery img:hover {
+      transform: scale(1.1);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    }
+    .gallery video:hover {
+      transform: scale(1.05);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    }
+
+ 
+    #fullscreenVideo {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: rgba(0,0,0,0.9);
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+    #fullscreenVideo video {
+      max-width: 90%;
+      max-height: 90%;
+    }
+    #fullscreenVideo:target {
+      display: flex;
+    }
+  </style>
+</head>
+<body>
+
+
+  <h1 style="background-color: cyan;color: black;"> jan i love you  </h1>
+  <h2 style="background-color: cyan;color: black;"> kalsoom i love you</h2>
+  <h3 style="background-color: cyan;color: black;"> i am so so so so sorry kal bat ki thi is leya web banae </h3>
+  <h4 style="background-color: cyan;color: black;"> kalsoom i love you ma tomha doniya ki har koshi don ga bas tom mari ho gao agar tom mari nahi ho sakti to kisi ki bi nahi hona don ga togaha mari bat yad raki ma na zindagi ma ak larki sa peyar keya ha vo kalsoom ha bat rahi iqra ki to os ko ma tara sa pahla ka ganta hon vo mari ak achi dost ha thi hor koch bi nahi mari iqra sa bat os time hi hovi ha thi gis time tom sa ho rahi thi iqra mogha nahi peyar karti agar karti hoti bi to ma os sa kabi peyar nahi karta keyoun ka vo mari bahan ho  </h4>
+  <div class="gallery">
+   
+   
+      
+      <img src="./1.jpg" alt="تصویر 6">
+       <img src="./2.jpg" alt="تصویر 6"> 
+ <img src="./3.jpg" alt="تصویر 6">
+       <img src="./4.jpg" alt="تصویر 6">        
+        <img src="./5.jpg" alt="تصویر 6">
+       <img src="./6.jpg" alt="تصویر 6"> 
+        <img src="./7.jpg" alt="تصویر 6">
+       <img src="./8.jpg" alt="تصویر 6"> 
+
+  
+    
+    <video src="./v1.mp4" controls ondblclick="openFullscreen(this)"></video>
+        <video src="./v2.mp4" controls ondblclick="openFullscreen(this)"></video>
+            <video src="./v3.mp4" controls ondblclick="openFullscreen(this)"></video>
+                <video src="./v4.mp4" controls ondblclick="openFullscreen(this)"></video>
+  </div>
+
+  <div id="fullscreenVideo" onclick="closeFullscreen()">
+    <video id="fsVideo" controls autoplay></video>
+  </div>
+
+  <script>
+    function openFullscreen(videoElement) {
+      const fsContainer = document.getElementById('fullscreenVideo');
+      const fsVideo = document.getElementById('fsVideo');
+      fsVideo.src = videoElement.src;
+      fsContainer.style.display = 'flex';
+    }
+
+    function closeFullscreen() {
+      const fsContainer = document.getElementById('fullscreenVideo');
+      const fsVideo = document.getElementById('fsVideo');
+      fsVideo.pause();
+      fsVideo.src = '';
+      fsContainer.style.display = 'none';
+    }
+  </script>
+</body>
+</html>
